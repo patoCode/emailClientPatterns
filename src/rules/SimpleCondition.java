@@ -20,14 +20,17 @@ public class SimpleCondition  extends Condition{
     @Override
     public boolean apply(Message message, Condition condition) {
         boolean res = false;
+        System.out.println("LLEGUE "+message.getFrom() + " FOLDER "+condition.getDestiny().getName());
         //TODO logica de operacion, por ahoras solo se implementar el igual y se comparar el campo from y cc
         if(condition.getOperator().equals("cc")){
             if(condition.getValue().equalsIgnoreCase(message.getCc())){
+                System.out.println("CUMPLE CC");
                 res = true;
             }
         }else{
             if(condition.getOperator().equals("from")){
                 if(condition.getValue().equalsIgnoreCase(message.getFrom())){
+                    System.out.println("CUMPLE FROM");
                     res = true;
                 }
             }

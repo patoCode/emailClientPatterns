@@ -52,11 +52,13 @@ public class EmailClient{
             SimpleCondition applyCondition = getRoot().getInspector().evaluar(message, getRoot().getFolders());
             if( applyCondition != null ){
                 Folder destiny = getRoot().find(applyCondition.getDestiny().getName());
+                System.out.println("MOVER MAIL A " +destiny.getName());
                 destiny.addEmail(message);
             }else{
                 getInbox().addEmail(message);
             }
         }catch(Exception e){
+            System.out.println("NR");
             getInbox().addEmail(message);
         }
     }

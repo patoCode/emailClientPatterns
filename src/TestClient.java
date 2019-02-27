@@ -58,14 +58,14 @@ public class TestClient {
 
         IBehavior moveable = new Move();
         SimpleCondition c1 = new SimpleCondition(1,"Notificaciones", mailNotification,"from" , notifications, moveable);
-        SimpleCondition c2 = new SimpleCondition(2,"Foros", mailForo,"from", foros, moveable);
-        SimpleCondition c3 = new SimpleCondition(3,"Social", mailSocial,"from", social, moveable);
-        SimpleCondition c4 = new SimpleCondition(4,"Social CC", mailSocial,"cc", social, moveable);
+//        SimpleCondition c2 = new SimpleCondition(2,"Foros", mailForo,"from", foros, moveable);
+//        SimpleCondition c3 = new SimpleCondition(3,"Social", mailSocial,"from", social, moveable);
+//        SimpleCondition c4 = new SimpleCondition(4,"Social CC", mailSocial,"cc", social, moveable);
 
         emailClient.addRule(emailClient.getInbox(), c1);
-        emailClient.addRule(emailClient.getInbox(), c2);
-        emailClient.addRule(emailClient.getInbox(), c3);
-        emailClient.addRule(emailClient.getInbox(), c4);
+//        emailClient.addRule(emailClient.getInbox(), c2);
+//        emailClient.addRule(emailClient.getInbox(), c3);
+//        emailClient.addRule(emailClient.getInbox(), c4);
 
         emailClient.receive(mail1);
         emailClient.receive(mail2);

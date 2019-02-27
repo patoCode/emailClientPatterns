@@ -13,9 +13,11 @@ public class RuleManager {
     public SimpleCondition evaluar(Message message, List<Folder> folders) throws Exception{
         SimpleCondition res = null;
         for (Folder folder: folders){
+            System.out.println("EVALUR FOLDER: "+folder.getName());
             if(folder.getConditions().size() > 0) {
                 for (SimpleCondition condition : folder.getConditions()) {
                     if(condition.apply(message, condition)){
+                        System.out.println("ENTRE ACA");
                         return condition;
                     }
                 }
